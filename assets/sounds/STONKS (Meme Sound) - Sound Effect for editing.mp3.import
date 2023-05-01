@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chesl7tdua2ow"
+path="res://.godot/imported/STONKS (Meme Sound) - Sound Effect for editing.mp3-78203c5829673335a84bef895675a43f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/STONKS (Meme Sound) - Sound Effect for editing.mp3"
+dest_files=["res://.godot/imported/STONKS (Meme Sound) - Sound Effect for editing.mp3-78203c5829673335a84bef895675a43f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

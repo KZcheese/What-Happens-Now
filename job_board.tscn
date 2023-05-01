@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://daj56ttaul514"]
+
+[ext_resource type="Texture2D" uid="uid://bbstnvfjn1y5u" path="res://assets/job board/board-background.png" id="1_8qcgf"]
+[ext_resource type="Script" path="res://job_board.gd" id="1_pgv6h"]
+[ext_resource type="Texture2D" uid="uid://c3kawvqj3rjf0" path="res://assets/job board/cookie-listing.png" id="2_tni25"]
+[ext_resource type="FontFile" uid="uid://btddkv3y8k7k" path="res://assets/MinimalPixel v2.ttf" id="3_1hnkv"]
+[ext_resource type="PackedScene" uid="uid://dt4wb7lu6yo2o" path="res://job_button.tscn" id="3_4ocp4"]
+[ext_resource type="Texture2D" uid="uid://bolcv0tlmv0p4" path="res://assets/job board/brush-listing.png" id="4_g5r6h"]
+[ext_resource type="Texture2D" uid="uid://cdcn7fhjcnum2" path="res://assets/job board/it-listing.png" id="5_oq8yb"]
+[ext_resource type="Texture2D" uid="uid://bxlx80rgc7dgk" path="res://assets/job board/coin_posting.png" id="6_cqqad"]
+[ext_resource type="FontFile" uid="uid://dlwhmnfjacosu" path="res://assets/design/MinimalPixel v2.ttf" id="9_81oje"]
+[ext_resource type="AudioStream" uid="uid://ckqka82t556fa" path="res://assets/sounds/Button Plate Click (Minecraft Sound) - Sound Effect for editing.mp3" id="9_jtt0f"]
+
+[node name="Job Board" type="Node2D"]
+script = ExtResource("1_pgv6h")
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="Canvas"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8qcgf")
+metadata/_edit_lock_ = true
+
+[node name="Artist Button" parent="Canvas" instance=ExtResource("3_4ocp4")]
+offset_left = 1024.0
+offset_right = 1132.0
+texture_normal = ExtResource("4_g5r6h")
+
+[node name="Job Title" parent="Canvas/Artist Button" index="0"]
+text = "Artist"
+
+[node name="Cookie Button" parent="Canvas" instance=ExtResource("3_4ocp4")]
+offset_left = 1024.0
+offset_top = 592.0
+offset_right = 1132.0
+offset_bottom = 652.0
+texture_normal = ExtResource("2_tni25")
+
+[node name="Job Title" parent="Canvas/Cookie Button" index="0"]
+text = "Pastry Chef"
+
+[node name="Stonks Button" parent="Canvas" instance=ExtResource("3_4ocp4")]
+offset_left = 360.0
+offset_top = 584.0
+offset_right = 468.0
+offset_bottom = 644.0
+texture_normal = ExtResource("6_cqqad")
+
+[node name="Job Title" parent="Canvas/Stonks Button" index="0"]
+text = "Banker"
+
+[node name="Programmer Button" parent="Canvas" instance=ExtResource("3_4ocp4")]
+offset_left = 368.0
+offset_right = 476.0
+texture_normal = ExtResource("5_oq8yb")
+
+[node name="Job Title" parent="Canvas/Programmer Button" index="0"]
+text = "IT"
+
+[node name="Label" type="Label" parent="Canvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -776.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 160.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
+theme_override_fonts/font = ExtResource("3_1hnkv")
+theme_override_font_sizes/font_size = 72
+text = "Job Board"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Click" type="AudioStreamPlayer" parent="Canvas"]
+stream = ExtResource("9_jtt0f")
+volume_db = -10.0
+
+[node name="Give Up Button" type="Button" parent="Canvas"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -608.0
+offset_top = -208.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_81oje")
+theme_override_font_sizes/font_size = 128
+text = "Give Up"
+
+[connection signal="pressed" from="Canvas/Artist Button" to="." method="_on_artist_button_pressed"]
+[connection signal="pressed" from="Canvas/Cookie Button" to="." method="_on_cookie_button_pressed"]
+[connection signal="pressed" from="Canvas/Stonks Button" to="." method="_on_stonks_button_pressed"]
+[connection signal="pressed" from="Canvas/Programmer Button" to="." method="_on_programmer_button_pressed"]
+[connection signal="pressed" from="Canvas/Give Up Button" to="." method="_on_give_up_button_pressed"]
+
+[editable path="Canvas/Artist Button"]
+[editable path="Canvas/Cookie Button"]
+[editable path="Canvas/Stonks Button"]
+[editable path="Canvas/Programmer Button"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw6y0jrrhndhm"]
+
+[ext_resource type="PackedScene" uid="uid://bw2bxkxippfxi" path="res://clicker.tscn" id="1_en2sh"]
+[ext_resource type="Texture2D" uid="uid://dd3gae5wake02" path="res://assets/bank clicker/desk.png" id="2_6nbhr"]
+[ext_resource type="Texture2D" uid="uid://cci8p3recqjbh" path="res://assets/bank clicker/stonks.png" id="3_7snoe"]
+[ext_resource type="AudioStream" uid="uid://chesl7tdua2ow" path="res://assets/sounds/STONKS (Meme Sound) - Sound Effect for editing.mp3" id="4_bpj45"]
+
+[node name="Stonks Clicker" instance=ExtResource("1_en2sh")]
+item_name = "Stonks"
+
+[node name="Background" parent="Canvas" index="0"]
+texture = ExtResource("2_6nbhr")
+
+[node name="Button" parent="Canvas" index="1"]
+offset_left = -328.0
+offset_top = -372.0
+offset_right = 497.0
+offset_bottom = 247.0
+scale = Vector2(1.009, 0.88)
+texture_normal = ExtResource("3_7snoe")
+
+[node name="Label" parent="Canvas" index="2"]
+visible = false
+
+[node name="Counter" parent="Canvas" index="3"]
+offset_left = 48.0
+offset_top = -512.0
+offset_right = 528.0
+offset_bottom = -372.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+
+[node name="Quit Button" parent="Canvas" index="4"]
+offset_left = 648.0
+offset_top = 608.0
+offset_right = 811.0
+offset_bottom = 715.0
+text = "Quite"
+
+[node name="Click Sound" parent="Canvas" index="5"]
+stream = ExtResource("4_bpj45")
+volume_db = -10.0

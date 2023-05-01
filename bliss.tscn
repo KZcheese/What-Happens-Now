@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cib6y4xn0nst6"]
+
+[ext_resource type="Texture2D" uid="uid://bnu5i664nr24d" path="res://assets/job board/bliss.png" id="1_cqv0r"]
+[ext_resource type="Script" path="res://bliss.gd" id="1_jf10l"]
+[ext_resource type="AudioStream" uid="uid://b7tb0e7jqvq3v" path="res://assets/sounds/Relaxing Nature Ambience Meditation.mp3" id="1_xb81a"]
+
+[node name="Bliss" type="Node2D"]
+script = ExtResource("1_jf10l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("1_xb81a")
+
+[node name="Bliss Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cqv0r")
+expand_mode = 1

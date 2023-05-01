@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5kqi2ckvp4lc"]
+
+[ext_resource type="PackedScene" uid="uid://bw2bxkxippfxi" path="res://clicker.tscn" id="1_6h54m"]
+[ext_resource type="Texture2D" uid="uid://dy3ucbcorepb8" path="res://assets/it clicker/it_background.png" id="2_ksswt"]
+[ext_resource type="Texture2D" uid="uid://dsmf6ckyevcah" path="res://assets/it clicker/setup-wizard.png" id="3_edn63"]
+[ext_resource type="AudioStream" uid="uid://w7v3530pyb0o" path="res://assets/sounds/Windows 95 - Error Sound Effect.mp3" id="4_u03p8"]
+
+[node name="Tech Clicker" instance=ExtResource("1_6h54m")]
+item_name = "Programs Installed"
+
+[node name="Background" parent="Canvas" index="0"]
+texture = ExtResource("2_ksswt")
+
+[node name="Button" parent="Canvas" index="1"]
+texture_normal = ExtResource("3_edn63")
+
+[node name="Quit Button" parent="Canvas" index="4"]
+offset_left = 1704.0
+offset_top = 880.0
+offset_right = 1867.0
+offset_bottom = 987.0
+
+[node name="Click Sound" parent="Canvas" index="5"]
+stream = ExtResource("4_u03p8")
+volume_db = -5.0
